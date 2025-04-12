@@ -10,12 +10,16 @@ import { Button } from "../ui/button";
 import UserIcon from "./UserIcon";
 import { links } from "@/utils/links";
 import SignOutLink from "./SignOutLink";
-import { DropdownMenuSeparator } from "@radix-ui/react-dropdown-menu";
 import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
 
 export default function LinksDropdown() {
-  const publicLinks = links.filter((link) => link.href !== "/dashboard");
-  const dashboardLink = links.find((link) => link.href === "/dashboard");
+  const publicLinks = links.filter(
+    (link) => link.href !== "/projects" && link.href !== "/projects/create"
+  );
+
+  const protectedLinks = links.filter(
+    (link) => link.href === "/projects" || link.href === "/projects/create"
+  );
 
   return (
     <DropdownMenu>
@@ -38,15 +42,14 @@ export default function LinksDropdown() {
 
         {/* Dashboard Link - only for signed in users */}
         <SignedIn>
-          {dashboardLink && (
-            <DropdownMenuItem>
-              <Link href={dashboardLink.href} className="capitalize w-full">
-                {dashboardLink.label}
-              </Link>
-            </DropdownMenuItem>
-          )}
-
-          <DropdownMenuSeparator />
+          {protectedLinks.length > 0 &&
+            protectedLinks.map((link) => (
+              <DropdownMenuItem key={link.href}>
+                <Link href={link.href} className="capitalize w-full">
+                  {link.label}
+                </Link>
+              </DropdownMenuItem>
+            ))}
 
           <DropdownMenuItem>
             <SignOutLink />
