@@ -10,7 +10,7 @@ export default async function Home() {
       className={`w-full h-[calc(100dvh-101px)] flex flex-col items-center justify-center`}
     >
       <div className="absolute inset-0 z-10 bg-slate-300 dark:bg-slate-900"></div>
-      {/* <div className="absolute inset-0 z-0">
+      {/* <div className="absolute inset-0 z-10">
         <Image
           src={bg}
           fill
@@ -21,7 +21,7 @@ export default async function Home() {
         />
       </div> */}
 
-      <div className="relative z-10 w-full bg-slate-50/30 rounded-2xl dark:bg-slate-800 shadow-sm py-5">
+      <div className="relative z-10 w-full bg-slate-50/83 rounded-2xl dark:bg-slate-800 shadow-sm py-5">
         <div className=" max-w-7xl mx-auto flex flex-col items-center relative z-10">
           <h1
             className={`px-5 block text-[1.6rem] leading-[2.3rem] md:text-[3.5rem] 2xl:text-[4rem] tracking-wide lg:leading-[4rem] 2xl:leading-[5.3rem]`}
