@@ -7,7 +7,7 @@ export default async function Home() {
 
   return (
     <div
-      className={`w-full h-[calc(100dvh-101px)] flex flex-col items-center justify-center`}
+      className={`w-full h-[calc(100dvh-101px)] container flex flex-col items-center justify-center`}
     >
       <div className="absolute inset-0 z-10 bg-slate-300 dark:bg-slate-900"></div>
       {/* <div className="absolute inset-0 z-10">

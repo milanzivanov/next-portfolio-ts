@@ -39,7 +39,7 @@ export default function RootLayout({
             storageKey="theme"
           >
             <Navbar />
-            <main className="container">{children}</main>
+            <main>{children}</main>
           </ThemeProvider>
         </body>
       </html>

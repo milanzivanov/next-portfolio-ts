@@ -9,15 +9,42 @@ generator client {
   output   = "../node_modules/.prisma/client"
 }
 
-model Profile {
-  id           String     @id @default(uuid())
-  clerkId      String     @unique
-  firstName    String
-  lastName     String
-  username     String
-  email        String
-  profileImage String
-  createdAt    DateTime   @default(now())
-  updatedAt    DateTime   @updatedAt
+model Project {
+  id           String   @id @default(uuid())
+  name         String   @unique
+  category     String
+  image        String?   
+  description  String
+  technologies String
+  createdBy    String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
+
+
+// model Profile {
+//   id           String     @id @default(uuid())
+//   clerkId      String     @unique
+//   firstName    String
+//   lastName     String
+//   username     String
+//   email        String
+//   profileImage String
+//   createdAt    DateTime   @default(now())
+//   updatedAt    DateTime   @updatedAt
+//   projects      Project[]
+// }
+
+// model Project {
+//   id          String     @id @default(uuid())
+//   name        String     @unique
+//   category    String
+//   image       String?
+//   description String
+//   technologies   String
+//   createdAt   DateTime   @default(now())
+//   updatedAt   DateTime   @updatedAt
+//   profile     Profile    @relation(fields: [profileId], references: [clerkId], onDelete: Cascade)
+//   profileId   String
+// }
 
