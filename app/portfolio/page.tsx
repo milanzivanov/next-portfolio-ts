@@ -3,15 +3,13 @@ import CategoriesList from "@/components/portfolio/CategoriesList";
 import ProjectsContainer from "@/components/portfolio/ProjectsContainer";
 import { Suspense } from "react";
 
-type Props = {
-  searchParams: {
-    category?: string;
-    search?: string;
-  };
-};
-export default async function PorfolioPage({ searchParams }: Props) {
-  const search = searchParams?.search;
-  const category = searchParams?.category;
+export default async function PorfolioPage(props: {
+  searchParams: Promise<{ category?: string; search?: string }>;
+}) {
+  const searchParams = await props.searchParams;
+  const awaitedSearchParams = await Promise.resolve(searchParams);
+
+  const { category, search } = awaitedSearchParams;
 
   return (
     <section className="h-[calc(100dvh-101px)] bg-slate-50 dark:bg-slate-800 py-5">

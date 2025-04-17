@@ -1,18 +1,21 @@
+import { redirect } from "next/navigation";
 import BreadCrumbs from "@/components/portfolio/BreadCrumbs";
 import Description from "@/components/portfolio/Description";
 import ImageContainer from "@/components/portfolio/ImageContainer";
 import { fetchProjectDetails } from "@/utils/actions";
 
-import { redirect } from "next/navigation";
+// type Props = {
+//   params: {
+//     id: string;
+//   };
+// };
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
-
-export default async function ProjectDetailsPage({ params }: Props) {
-  const project = await fetchProjectDetails(params.id);
+export default async function ProjectDetailsPage(props: {
+  params: Promise<{ id: string }>;
+}) {
+  const params = await props.params;
+  const { id } = params;
+  const project = await fetchProjectDetails(id);
 
   if (!project) return redirect("/");
 
