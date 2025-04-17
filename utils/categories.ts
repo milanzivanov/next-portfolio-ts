@@ -8,7 +8,7 @@ type Category = {
   icon: IconType;
 };
 
-export type CategoryLabel = "websites" | "graphic design" | "application";
+export type CategoryLabel = "websites" | "graphic design" | "apps";
 
 export const categories: Category[] = [
   {
@@ -16,7 +16,7 @@ export const categories: Category[] = [
     icon: CgWebsite
   },
   {
-    label: "application",
+    label: "apps",
     icon: MdSettingsApplications
   }
 ];

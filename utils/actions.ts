@@ -1,11 +1,11 @@
 "use server";
 
+import { prisma } from "@/utils/db";
+
 import { currentUser } from "@clerk/nextjs/server";
 import { imageSchema, projectSchema, validateWithZodSchema } from "./schemas";
 import { redirect } from "next/navigation";
 import { uploadImage } from "@/lib/supabase";
-
-import { prisma } from "@/utils/db";
 
 const renderError = (error: unknown): { message: string } => {
   console.log(error);
@@ -14,6 +14,7 @@ const renderError = (error: unknown): { message: string } => {
   };
 };
 
+//
 const getAuthUser = async () => {
   const user = await currentUser();
 
@@ -53,4 +54,43 @@ export const createProjectAction = async (
   }
 
   return redirect("/portfolio");
+};
+
+//
+export const fetchProjects = async ({
+  search = "",
+  category
+}: {
+  search?: string;
+  category?: string;
+}) => {
+  const projects = await prisma.project.findMany({
+    where: {
+      category,
+      OR: [{ name: { contains: search, mode: "insensitive" } }]
+    },
+    select: {
+      id: true,
+      name: true,
+      image: true
+    },
+    orderBy: {
+      createdAt: "desc"
+    }
+  });
+
+  return projects;
+};
+
+//
+export const fetchProjectDetails = async (id: string) => {
+  const project = await prisma.project.findUnique({
+    where: {
+      id
+    }
+    // include: {
+    //   profile: true
+    // }
+  });
+  return project;
 };
