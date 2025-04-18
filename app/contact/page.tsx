@@ -16,7 +16,7 @@ export default function ContactPage() {
     <div className="w-full bg-slate-50 dark:bg-slate-800">
       <div className="container 2xl:md:h-[calc(100dvh-101px)] flex md:flex flex-col items-center justify-center">
         <div className="max-w-5xl  2xl:max-w-7xl mx-auto">
-          <div className="bg-gray-50 md:p-5 2xl:rounded-md shadow-md flex flex-col md:flex-row">
+          <div className="bg-gray-100 md:p-5 2xl:rounded-md shadow-md flex flex-col md:flex-row">
             <div className="flex-1">
               <Image
                 className="object-cover flex-1 bg-gray-300 md:rounded-md"

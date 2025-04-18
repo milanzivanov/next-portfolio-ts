@@ -20,7 +20,7 @@ export default async function ProjectsContainer({
       <EmptyList
         heading="No projects found"
         message="Try changing the filters"
-        btnText="Back to home"
+        btnText="Back to portfolio"
       />
     );
 

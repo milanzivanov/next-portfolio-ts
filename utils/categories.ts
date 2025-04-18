@@ -1,5 +1,6 @@
 import { IconType } from "react-icons";
 import { CgWebsite } from "react-icons/cg";
+import { MdOutlineDesignServices } from "react-icons/md";
 
 import { MdSettingsApplications } from "react-icons/md";
 
@@ -8,7 +9,7 @@ type Category = {
   icon: IconType;
 };
 
-export type CategoryLabel = "websites" | "graphic design" | "apps";
+export type CategoryLabel = "websites" | "UI design" | "apps";
 
 export const categories: Category[] = [
   {
@@ -18,5 +19,9 @@ export const categories: Category[] = [
   {
     label: "apps",
     icon: MdSettingsApplications
+  },
+  {
+    label: "UI design",
+    icon: MdOutlineDesignServices
   }
 ];

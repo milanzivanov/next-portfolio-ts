@@ -8,19 +8,19 @@ export const metadata = {
   title: "About page"
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
   return (
     <section className="w-full bg-slate-50 dark:bg-slate-800">
       <div className="container 2xl:h-[calc(100dvh-101px)] h-auto flex items-center justify-center">
         <div className="max-w-5xl 2xl:max-w-7xl mx-auto">
-          <div className="w-full bg-gray-100 p-5 flex md:flex-row flex-col xl:rounded-md shadow-md">
+          <div className="w-full bg-gray-transparent md:bg-gray-100 p-5 flex md:flex-row flex-col xl:rounded-md md:shadow-md">
             <div className="flex-1 flex flex-col justify-center space-y-1 md:space-y-4 pr-3 pb-5">
               <h1 className="text-2xl tracking-wider md:text-4xl text-gray-600 font-bold">
                 Bit about myself
               </h1>
               <p className="text-grey-200 dark:text-slate-800 text-base 2xl:text-lg">
-                Hi, I&apos;m Milan an enthusiastic front-end developer and
-                design enthusiast with 2+ years of experience at{" "}
+                Hi, I&apos;m Milan an enthusiastic front-end developer with 2+
+                years of experience at{" "}
                 <a
                   href="https://www.vegaitglobal.com/"
                   target="_blank"
@@ -69,15 +69,15 @@ export default function AboutPage() {
                 src={image1}
                 alt="Family sitting around a fire pit in front of cabin"
                 placeholder="blur"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
                 quality={80}
               />
             </div>
           </div>
 
-          {/* ??? */}
-          <div className="flex justify-center w-full px-5 xl:px-0 md:justify-end my-5">
+          <div className="flex w-full px-5 xl:px-0 justify-end my-5">
             <Link href="/">
-              <SubmitButton text="back home" />
+              <SubmitButton className="cursor-pointer" text="back home" />
             </Link>
           </div>
         </div>

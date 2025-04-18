@@ -15,7 +15,7 @@ export default function EmptyList({
       <h2 className="text-xl font-bold ">{heading}</h2>
       <p className="text-lg">{message}</p>
       <Button asChild className="mt-4 capitalize" size="lg">
-        <Link href="/">{btnText}</Link>
+        <Link href="/portfolio">{btnText}</Link>
       </Button>
     </div>
   );
