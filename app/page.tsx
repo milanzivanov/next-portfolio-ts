@@ -1,10 +1,7 @@
-// import { currentUser } from "@clerk/nextjs/server";
 // import Image from "next/image";
 // import bg from "@/public/bg.webp";
 
 export default async function Home() {
-  // const user = await currentUser();
-
   return (
     <div
       className={`w-full h-[calc(100dvh-101px)] container flex flex-col items-center justify-center`}

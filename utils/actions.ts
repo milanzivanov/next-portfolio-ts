@@ -5,7 +5,8 @@ import { prisma } from "@/utils/db";
 import { currentUser } from "@clerk/nextjs/server";
 import { imageSchema, projectSchema, validateWithZodSchema } from "./schemas";
 import { redirect } from "next/navigation";
-import { uploadImage } from "@/lib/supabase";
+import { supabase, uploadImage } from "@/lib/supabase";
+import { revalidatePath } from "next/cache";
 
 const renderError = (error: unknown): { message: string } => {
   console.log(error);
@@ -88,9 +89,41 @@ export const fetchProjectDetails = async (id: string) => {
     where: {
       id
     }
-    // include: {
-    //   profile: true
-    // }
   });
   return project;
+};
+
+//
+export const deleteProjectAction = async ({
+  projectId
+}: {
+  projectId: string;
+}) => {
+  try {
+    const project = await prisma.project.findUnique({
+      where: { id: projectId },
+      select: { image: true }
+    });
+
+    if (project?.image) {
+      const { error } = await supabase.storage
+        .from("portfolio-bucket")
+        .remove([project.image]);
+
+      if (error) {
+        console.error("Error deleting image from Supabase:", error.message);
+      }
+    }
+
+    // Delete the project from the database
+    await prisma.project.delete({
+      where: { id: projectId }
+    });
+
+    // Revalidate the portfolio page
+    revalidatePath("/portfolio");
+    return { message: "Project and associated image deleted successfully" };
+  } catch (error) {
+    return renderError(error);
+  }
 };
