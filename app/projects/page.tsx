@@ -19,13 +19,12 @@ import Image from "next/image";
 export default async function ProjectDashboard() {
   const projects = await fetchProjects({});
 
-  // console.log("//////// projects", projects);
   if (projects.length === 0) {
     return <EmptyList />;
   }
 
   return (
-    <section className="h-[calc(100dvh-101px)] bg-slate-50 dark:bg-slate-800 py-5">
+    <section className="h-[calc(100dvh-68px)] md:h-[calc(100dvh-101px)] bg-slate-100 dark:bg-slate-800 py-5">
       <div className="container">
         <div className="mt-3">
           <h4 className="mb-4 font-semibold text-2xl">
