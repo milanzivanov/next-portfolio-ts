@@ -1,5 +1,11 @@
+import { fetchProjects, deleteProjectAction } from "@/utils/actions";
+
+import Link from "next/link";
+import Image from "next/image";
+
 import EmptyList from "@/components/portfolio/EmptyList";
-// import Link from "next/link";
+import FormContainer from "@/components/form/FormContainer";
+import { IconButton } from "@/components/form/Buttons";
 
 import {
   Table,
@@ -11,16 +17,16 @@ import {
   TableRow
 } from "@/components/ui/table";
 
-import FormContainer from "@/components/form/FormContainer";
-import { IconButton } from "@/components/form/Buttons";
-import { fetchProjects, deleteProjectAction } from "@/utils/actions";
-import Image from "next/image";
-
-export default async function ProjectDashboard() {
+export default async function ProjectsDashboard() {
   const projects = await fetchProjects({});
 
   if (projects.length === 0) {
-    return <EmptyList />;
+    return (
+      <EmptyList
+        heading="No projects in the list."
+        message="Be free to create a project."
+      />
+    );
   }
 
   return (
@@ -35,7 +41,6 @@ export default async function ProjectDashboard() {
             <TableHeader>
               <TableRow>
                 <TableHead>Project name</TableHead>
-                <TableHead className="text-right">Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -48,15 +53,23 @@ export default async function ProjectDashboard() {
                       <div className="flex items-center gap-4">
                         <Image
                           src={image || ""}
-                          width={75}
-                          height={75}
+                          width={100}
+                          height={100}
                           alt={name}
                           className="object-cover rounded-md"
                         />
-                        <span className="font-medium">{name}</span>
+                        <Link
+                          href={`/portfolio/${id}`}
+                          className="underline text-muted-foreground tracking-wide"
+                        >
+                          <span className="font-medium">{name}</span>
+                        </Link>
                       </div>
                     </TableCell>
-                    <TableCell className="text-right">
+                    <TableCell className="flex items-center justify-end gap-x-2">
+                      <Link href={`/projects/${id}/edit`}>
+                        <IconButton actionType="edit"></IconButton>
+                      </Link>
                       <DeleteProject projectId={id} />
                     </TableCell>
                   </TableRow>

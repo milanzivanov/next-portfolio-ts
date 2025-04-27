@@ -4,8 +4,16 @@ import { technologies, Technology } from "@/utils/technologies";
 import { Checkbox } from "@/components/ui/checkbox";
 
 function TechnologiesInput({ defaultValue }: { defaultValue?: Technology[] }) {
+  const technologiesWithIcons = defaultValue?.map(({ name, selected }) => {
+    return {
+      name,
+      selected,
+      icon: technologies.find((tech) => tech.name === name)!.icon
+    };
+  });
+
   const [selectedTecnology, setSelectedTecnology] = useState<Technology[]>(
-    defaultValue || technologies
+    technologiesWithIcons || technologies
   );
 
   const handleChange = (technology: Technology) => {

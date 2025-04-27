@@ -9,7 +9,7 @@ export default function SkillsPage() {
 
   return (
     <section className="w-full bg-slate-100 dark:bg-slate-800">
-      <div className="w-full h-[calc(100dvh-68px)] md:h-[calc(100dvh-101px)] flex flex-col items-center justify-center">
+      <div className="w-full md:h-[calc(100dvh-101px)] flex flex-col items-center justify-center">
         <div className="w-full">
           <div className="max-w-5xl 2xl:max-w-7xl mx-auto">
             <div className="flex flex-col bg-white pt-5 pb-10 px-5 md:mt-5 shadow-md xl:rounded-md">
@@ -38,7 +38,7 @@ export default function SkillsPage() {
             {/* BTH */}
             <div className="flex justify-center px-5 xl:px-0 md:justify-end my-5">
               <Link href="/">
-                <SubmitButton className="cursor-pointer" text="back home" />
+                <SubmitButton className="cursor-pointer" text="Back home" />
               </Link>
             </div>
           </div>

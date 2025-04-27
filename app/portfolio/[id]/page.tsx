@@ -4,12 +4,6 @@ import Description from "@/components/portfolio/Description";
 import ImageContainer from "@/components/portfolio/ImageContainer";
 import { fetchProjectDetails } from "@/utils/actions";
 
-// type Props = {
-//   params: {
-//     id: string;
-//   };
-// };
-
 export default async function ProjectDetailsPage(props: {
   params: Promise<{ id: string }>;
 }) {

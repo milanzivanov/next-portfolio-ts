@@ -76,7 +76,7 @@ export default function ContactPage() {
           {/* BTH */}
           <div className="flex justify-center px-5 xl:px-0 md:justify-end my-5">
             <Link href="/">
-              <SubmitButton text="back home" />
+              <SubmitButton text="Back home" />
             </Link>
           </div>
         </div>

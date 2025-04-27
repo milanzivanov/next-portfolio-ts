@@ -127,3 +127,61 @@ export const deleteProjectAction = async ({
     return renderError(error);
   }
 };
+
+// edit project
+export const updateProjectAction = async (
+  prevState: unknown,
+  formData: FormData
+): Promise<{ message: string }> => {
+  const projectId = formData.get("id") as string;
+
+  try {
+    const rawData = Object.fromEntries(formData);
+    const validatedFields = validateWithZodSchema(projectSchema, rawData);
+
+    await prisma.project.update({
+      where: {
+        id: projectId
+      },
+      data: {
+        ...validatedFields
+      }
+    });
+
+    revalidatePath(`/projects/${projectId}/edit`);
+
+    return {
+      message: "Project updated successfully"
+    };
+  } catch (error) {
+    return renderError(error);
+  }
+};
+
+export const updateProjectImageAction = async (
+  prevState: unknown,
+  formData: FormData
+): Promise<{ message: string }> => {
+  const projectId = formData.get("id") as string;
+
+  try {
+    const image = formData.get("image") as File;
+    const validatedFields = validateWithZodSchema(imageSchema, { image });
+    const fullPath = await uploadImage(validatedFields.image);
+
+    await prisma.project.update({
+      where: {
+        id: projectId
+      },
+      data: {
+        image: fullPath.data.publicUrl
+      }
+    });
+
+    revalidatePath(`/projects/${projectId}/edit`);
+
+    return { message: "Project image updated successfully" };
+  } catch (error) {
+    return renderError(error);
+  }
+};

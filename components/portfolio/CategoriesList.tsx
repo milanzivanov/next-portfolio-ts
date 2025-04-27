@@ -14,7 +14,7 @@ export default function CategoriesList({
 
   return (
     <section>
-      <ScrollArea className="py-6">
+      <ScrollArea className="py-2">
         <div className="flex gap-x-4">
           {categories.map((item) => {
             const isActive = item.label === category;
@@ -29,7 +29,7 @@ export default function CategoriesList({
                     isActive ? "text-primary" : ""
                   }`}
                 >
-                  <item.icon className="w-8 h-8 " />
+                  <item.icon className="w-6 h-6 " />
                   <p className="capitalize text-sm mt-1">{item.label}</p>
                 </article>
               </Link>

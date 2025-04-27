@@ -12,7 +12,7 @@ import { createProjectAction } from "@/utils/actions";
 export default function CreateProjectPage() {
   return (
     <section className="bg-slate-50 dark:bg-slate-800">
-      <div className="container">
+      <div className="container pb-5">
         <h1 className="text-2xl font-semibold py-5 capitalize">
           Add new project
         </h1>
@@ -39,7 +39,9 @@ export default function CreateProjectPage() {
             </div>
             <h3 className="text-lg  my-6 font-medium">Technologies</h3>
             <TechnologiesInput />
-            <SubmitButton className="mt-12" text="Create project" />
+            <div className="flex justify-end">
+              <SubmitButton className="mt-12" text="Add project" />
+            </div>
           </FormContainer>
         </div>
       </div>

@@ -40,7 +40,7 @@ export default function LinksDropdown() {
           </DropdownMenuItem>
         ))}
 
-        {/* Dashboard Link - only for signed in users */}
+        {/* Dashboard Link - only for signed in users for now just for me */}
         <SignedIn>
           {protectedLinks.length > 0 &&
             protectedLinks.map((link) => (
