@@ -22,7 +22,7 @@ export default function ProjectCard({
           />
         </div>
         <div className="flex justify-between items-center">
-          <h3 className="text-sm md:text-lg font-semibold mt-1">
+          <h3 className="text-sm md:text-lg font-semibold">
             {name.substring(0, 30)}
           </h3>
         </div>
