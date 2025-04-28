@@ -15,21 +15,11 @@ export default function Home() {
           alt="mobile phone pancile keybord on the table"
         />
       </div>
-      <div className="absolute inset-0 z-10">
-        <Image
-          src={bg}
-          fill
-          placeholder="blur"
-          quality={80}
-          className="object-cover object-center md:rotate-180"
-          alt="mobile phone pancile keybord on the table"
-        />
-      </div>
 
       <div className="relative z-12 w-full bg-slate-50/40 rounded-2xl dark:bg-slate-800 shadow-sm py-5">
         <div className=" max-w-7xl mx-auto flex flex-col items-center relative z-10">
           <h1
-            className={`px-5 block text-[1.6rem] leading-[2.3rem] md:text-[3.5rem] 2xl:text-[4rem] tracking-wide lg:leading-[4rem] 2xl:leading-[5.3rem]`}
+            className={`px-5 block text-[1.5rem] leading-[2.3rem] md:text-[3.5rem] 2xl:text-[4rem] tracking-wide lg:leading-[4rem] 2xl:leading-[5.3rem]`}
           >
             <span className="block text-slate-800 dark:text-slate-100">
               I am{" "}
