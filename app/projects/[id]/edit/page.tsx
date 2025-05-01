@@ -46,12 +46,18 @@ export default async function EditProjectPage({
 
           <FormContainer action={updateProjectAction}>
             <input type="hidden" name="id" value={project.id} />
-            <div className="grid md:grid-cols-2 gap-8 mb-4 mt-8">
+            <div className="grid md:grid-cols-3 gap-8 mb-4 mt-8">
               <FormInput
                 name="name"
                 type="text"
                 label="Name (20 limit)"
                 defaultValue={project.name}
+              />
+              <FormInput
+                name="link"
+                type="text"
+                label="Project link"
+                defaultValue={project.link || ""}
               />
 
               <CategoriesInput defaultValue={project.category} />
@@ -59,7 +65,7 @@ export default async function EditProjectPage({
 
             <TextAreaInput
               name="description"
-              labelText="Description (10 - 100 Words)"
+              labelText="Project info (10 - 100 Words)"
               defaultValue={project.description}
             />
 

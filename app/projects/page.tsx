@@ -45,7 +45,7 @@ export default async function ProjectsDashboard() {
             </TableHeader>
             <TableBody>
               {projects.map((project) => {
-                const { id, name, image } = project;
+                const { id, name, image, link } = project;
 
                 return (
                   <TableRow key={id}>
@@ -67,6 +67,7 @@ export default async function ProjectsDashboard() {
                       </div>
                     </TableCell>
                     <TableCell className="flex items-center justify-end gap-x-2">
+                      <Link href={link || ""}>View project</Link>
                       <Link href={`/projects/${id}/edit`}>
                         <IconButton actionType="edit"></IconButton>
                       </Link>

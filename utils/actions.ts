@@ -73,7 +73,8 @@ export const fetchProjects = async ({
     select: {
       id: true,
       name: true,
-      image: true
+      image: true,
+      link: true
     },
     orderBy: {
       createdAt: "desc"

@@ -44,6 +44,10 @@ export const projectSchema = z.object({
       message: "Project name must be less than 50 characters long"
     }),
 
+  link: z.string().url({
+    message: "Project link must be a valid URL"
+  }),
+
   category: z.string(),
 
   description: z.string().refine(

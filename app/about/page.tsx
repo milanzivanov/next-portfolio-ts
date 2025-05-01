@@ -1,8 +1,7 @@
 import Image from "next/image";
 
 import image1 from "@/public/Milan_left.webp";
-import Link from "next/link";
-import { SubmitButton } from "@/components/form/Buttons";
+import { IconButton } from "@/components/form/Buttons";
 
 export const metadata = {
   title: "About page"
@@ -76,9 +75,7 @@ export default async function AboutPage() {
           </div>
 
           <div className="flex w-full md:px-5 xl:px-0 justify-end my-5">
-            <Link href="/">
-              <SubmitButton className="cursor-pointer" text="back home" />
-            </Link>
+            <IconButton actionType="back" href="/" />
           </div>
         </div>
       </div>

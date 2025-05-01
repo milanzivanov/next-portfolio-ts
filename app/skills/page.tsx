@@ -1,8 +1,7 @@
 import { technologies } from "@/utils/technologies";
-import Link from "next/link";
 
 import SkillsCard from "@/components/skill/SkillsCard";
-import { SubmitButton } from "@/components/form/Buttons";
+import { IconButton } from "@/components/form/Buttons";
 
 export default function SkillsPage() {
   const skills = technologies;
@@ -36,10 +35,10 @@ export default function SkillsPage() {
               <SkillsCard skills={skills} />
             </div>
             {/* BTH */}
-            <div className="flex justify-center px-5 xl:px-0 md:justify-end my-5">
-              <Link href="/">
-                <SubmitButton className="cursor-pointer" text="Back home" />
-              </Link>
+            <div className="flex justify-center px-5 xl:px-0 md:justify-end">
+              <div className="flex w-full md:px-5 xl:px-0 justify-end my-5">
+                <IconButton actionType="back" href="/" />
+              </div>
             </div>
           </div>
         </div>

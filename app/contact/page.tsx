@@ -4,8 +4,7 @@ import image1 from "@/public/Milan_right.webp";
 
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
-import Link from "next/link";
-import { SubmitButton } from "@/components/form/Buttons";
+import { IconButton } from "@/components/form/Buttons";
 
 export const metadata = {
   title: "Contact page"
@@ -74,10 +73,8 @@ export default function ContactPage() {
             </div>
           </div>
           {/* BTH */}
-          <div className="flex justify-center px-5 xl:px-0 md:justify-end my-5">
-            <Link href="/">
-              <SubmitButton text="Back home" />
-            </Link>
+          <div className="flex w-full md:px-5 xl:px-0 justify-end my-5">
+            <IconButton actionType="back" href="/" />
           </div>
         </div>
       </div>

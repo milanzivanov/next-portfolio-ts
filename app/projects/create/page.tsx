@@ -18,12 +18,18 @@ export default function CreateProjectPage() {
         </h1>
         <div className="border p-8 rounded-md">
           <FormContainer action={createProjectAction}>
-            <div className="grid md:grid-cols-2 gap-4 mb-4">
+            <div className="grid md:grid-cols-3 gap-4 mb-4">
               <FormInput
                 type="text"
                 name="name"
                 label="Project name"
                 placeholder="Enter project name"
+              />
+              <FormInput
+                type="text"
+                name="link"
+                label="Project link"
+                placeholder="www.example.com"
               />
 
               <CategoriesInput />

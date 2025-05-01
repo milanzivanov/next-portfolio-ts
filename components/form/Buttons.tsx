@@ -4,9 +4,10 @@ import { useFormStatus } from "react-dom";
 import { Button } from "@/components/ui/button";
 
 import { LuTrash2 } from "react-icons/lu";
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaArrowCircleLeft } from "react-icons/fa";
+import Link from "next/link";
 
-type actionType = "edit" | "delete";
+type actionType = "edit" | "delete" | "back";
 type btnSize = "default" | "lg" | "sm";
 
 type SubmitButtonProps = {
@@ -37,7 +38,15 @@ export function SubmitButton({
 }
 
 //
-export const IconButton = ({ actionType }: { actionType: actionType }) => {
+type IconButtonProps = {
+  actionType: actionType;
+  href?: string;
+  className?: string;
+  size?: btnSize;
+  text?: string;
+};
+
+export const IconButton = ({ actionType, href = "/" }: IconButtonProps) => {
   const { pending } = useFormStatus();
 
   const renderIcon = () => {
@@ -46,11 +55,25 @@ export const IconButton = ({ actionType }: { actionType: actionType }) => {
         return <FaEdit />;
       case "delete":
         return <LuTrash2 />;
+      case "back":
+        return <FaArrowCircleLeft />;
       default:
         const never: never = actionType;
         throw new Error(`Invalid action type: ${never}`);
     }
   };
+
+  if (actionType === "back") {
+    return (
+      <Link
+        href={href}
+        className="flex items-center gap-2 p-2 cursor-pointer text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+      >
+        {renderIcon()}
+        <span className="text-sm font-medium">Back home</span>
+      </Link>
+    );
+  }
 
   return (
     <Button
