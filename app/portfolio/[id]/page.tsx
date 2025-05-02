@@ -5,6 +5,18 @@ import ImageContainer from "@/components/portfolio/ImageContainer";
 import { fetchProjectDetails } from "@/utils/actions";
 import Link from "next/link";
 
+export async function generateMetadata(props: {
+  params: Promise<{ id: string }>;
+}) {
+  const resolvedParams = await props.params;
+  const project = await fetchProjectDetails(resolvedParams.id);
+  if (!project) throw new Error("Project not found");
+  const { name } = project;
+  return {
+    title: name
+  };
+}
+
 export default async function ProjectDetailsPage(props: {
   params: Promise<{ id: string }>;
 }) {
@@ -21,15 +33,19 @@ export default async function ProjectDetailsPage(props: {
       <section className="container">
         <BreadCrumbs name={name} />
         <header className="flex justify-between items-center mt-4">
-          <h2 className="flex items-center text-md md:text-3xl font-bold">
+          <h2 className="flex items-center text-md md:text-2xl font-bold">
             <span className="mr-2">{name}</span>
-            <Link className="text-sm" href={link || ""} target="_blank">
-              (View project)
+            <Link
+              className="text-sm font-medium"
+              href={link || ""}
+              target="_blank"
+            >
+              (view project)
             </Link>
           </h2>
         </header>
 
-        <section className="lg:grid lg:grid-cols-12 gap-x-12">
+        <section className="lg:grid lg:grid-cols-12 gap-x-4">
           <div className="lg:col-span-8">
             <ImageContainer mainImage={image || ""} name={name} />
           </div>

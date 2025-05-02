@@ -56,7 +56,7 @@ export const IconButton = ({ actionType, href = "/" }: IconButtonProps) => {
       case "delete":
         return <LuTrash2 />;
       case "back":
-        return <FaArrowCircleLeft />;
+        return <FaArrowCircleLeft size={20} />;
       default:
         const never: never = actionType;
         throw new Error(`Invalid action type: ${never}`);

@@ -3,6 +3,10 @@ import { technologies } from "@/utils/technologies";
 import SkillsCard from "@/components/skill/SkillsCard";
 import { IconButton } from "@/components/form/Buttons";
 
+export const metadata = {
+  title: "Skills page"
+};
+
 export default function SkillsPage() {
   const skills = technologies;
 

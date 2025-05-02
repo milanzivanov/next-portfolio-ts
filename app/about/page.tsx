@@ -75,7 +75,7 @@ export default async function AboutPage() {
           </div>
 
           <div className="flex w-full md:px-5 xl:px-0 justify-end my-5">
-            <IconButton actionType="back" href="/" />
+            <IconButton actionType="back" text="Back home" href="/" />
           </div>
         </div>
       </div>
