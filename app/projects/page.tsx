@@ -16,6 +16,7 @@ import {
   TableHeader,
   TableRow
 } from "@/components/ui/table";
+import { FaLink } from "react-icons/fa";
 
 export default async function ProjectsDashboard() {
   const projects = await fetchProjects({});
@@ -52,7 +53,11 @@ export default async function ProjectsDashboard() {
                     <TableCell>
                       <div className="flex items-center gap-4">
                         <Image
-                          src={image || ""}
+                          src={
+                            image
+                              ? `https://zikdvdnrvqdvrrhvwjau.supabase.co/storage/v1/object/public/portfolio-bucket/${image}`
+                              : ""
+                          }
                           width={100}
                           height={100}
                           alt={name}
@@ -66,8 +71,15 @@ export default async function ProjectsDashboard() {
                         </Link>
                       </div>
                     </TableCell>
-                    <TableCell className="flex items-center justify-end gap-x-2">
-                      <Link href={link || ""}>View project</Link>
+                    <TableCell className="flex items-center justify-end gap-x-1">
+                      <Link
+                        href={link || ""}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground mr-3 hover:text-blue-500 dark:hover:text-blue-400"
+                      >
+                        <FaLink />
+                      </Link>
                       <Link href={`/projects/${id}/edit`}>
                         <IconButton actionType="edit"></IconButton>
                       </Link>

@@ -24,12 +24,14 @@ export default function CreateProjectPage() {
                 name="name"
                 label="Project name"
                 placeholder="Enter project name"
+                defaultValue="test project"
               />
               <FormInput
                 type="text"
                 name="link"
                 label="Project link"
-                placeholder="www.example.com"
+                placeholder="https://example.com"
+                defaultValue="https://milanzivanov.com"
               />
 
               <CategoriesInput />

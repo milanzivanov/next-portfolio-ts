@@ -28,7 +28,11 @@ export default function ImageInputContainer(props: ImageInputContainerProps) {
     <div>
       {image ? (
         <Image
-          src={image}
+          src={
+            image
+              ? `https://zikdvdnrvqdvrrhvwjau.supabase.co/storage/v1/object/public/portfolio-bucket/${image}`
+              : ""
+          }
           alt={name}
           width={100}
           height={100}

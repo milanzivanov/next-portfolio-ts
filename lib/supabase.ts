@@ -23,5 +23,6 @@ export const uploadImage = async (fileImage: File) => {
     throw new Error("Failed to upload image");
   }
 
-  return supabase.storage.from(bucket).getPublicUrl(fileName);
+  // return supabase.storage.from(bucket).getPublicUrl(fileName);
+  return fileName;
 };

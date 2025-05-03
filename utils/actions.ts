@@ -46,7 +46,7 @@ export const createProjectAction = async (
     await prisma.project.create({
       data: {
         ...validatedFields,
-        image: fullPath.data.publicUrl,
+        image: fullPath,
         createdBy: user.id
       }
     });
@@ -113,10 +113,11 @@ export const deleteProjectAction = async ({
 
       if (error) {
         console.error("Error deleting image from Supabase:", error.message);
+      } else {
+        console.log("Image deleted successfully from Supabase.");
       }
     }
 
-    // Delete the project from the database
     await prisma.project.delete({
       where: { id: projectId }
     });
@@ -157,6 +158,8 @@ export const updateProjectAction = async (
   } catch (error) {
     return renderError(error);
   }
+
+  // return redirect("/portfolio");
 };
 
 export const updateProjectImageAction = async (
@@ -175,7 +178,7 @@ export const updateProjectImageAction = async (
         id: projectId
       },
       data: {
-        image: fullPath.data.publicUrl
+        image: fullPath
       }
     });
 
