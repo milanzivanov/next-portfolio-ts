@@ -10,22 +10,20 @@ export default function CategoriesList({
   search?: string;
 }) {
   const searchTerm = search ? `&search=${search}` : "";
-  // console.log("//////// searchTerm", searchTerm);
 
   return (
     <section>
       <ScrollArea className="py-2">
-        <div className="flex gap-x-4">
+        <div className="flex">
           {categories.map((item) => {
             const isActive = item.label === category;
-            // console.log("//////// isActive", isActive);
             return (
               <Link
                 key={item.label}
                 href={`portfolio/?category=${item.label}${searchTerm}`}
               >
                 <article
-                  className={`p-3 flex flex-col items-center cursor-pointer duration-300  hover:text-primary w-[100px] ${
+                  className={`flex flex-col items-center cursor-pointer duration-300  hover:text-primary w-[100px] ${
                     isActive ? "text-primary" : ""
                   }`}
                 >
