@@ -11,7 +11,7 @@ export default function SkillsPage() {
   const skills = technologies;
 
   return (
-    <section className="w-full bg-slate-100 dark:bg-slate-800">
+    <section className="w-full">
       <div className="w-full md:h-[calc(100dvh-101px)] flex flex-col items-center justify-center">
         <div className="w-full">
           <div className="max-w-5xl 2xl:max-w-7xl mx-auto">

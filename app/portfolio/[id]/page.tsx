@@ -29,7 +29,7 @@ export default async function ProjectDetailsPage(props: {
   const { name, image, link } = project;
 
   return (
-    <div className="h-[calc(100dvh-101px)] bg-slate-50 dark:bg-slate-800 py-5">
+    <div className="h-[calc(100dvh-101px)] py-5">
       <section className="container">
         <BreadCrumbs name={name} />
         <header className="flex justify-between items-center mt-4">
@@ -45,11 +45,11 @@ export default async function ProjectDetailsPage(props: {
           </h2>
         </header>
 
-        <section className="lg:grid lg:grid-cols-12 gap-x-4">
-          <div className="lg:col-span-8">
+        <section className="lg:grid lg:grid-cols-12 gap-x-4 bg-slate-50 dark:bg-slate-700 rounded-md overflow-hidden">
+          <div className="lg:col-span-7">
             <ImageContainer mainImage={image || ""} name={name} />
           </div>
-          <div className="lg:col-span-4 flex flex-col items-center">
+          <div className="lg:col-span-5 flex flex-col items-center p-5 md:p-0">
             <Description description={project.description} />
           </div>
         </section>

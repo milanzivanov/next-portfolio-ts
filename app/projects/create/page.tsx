@@ -11,12 +11,12 @@ import { createProjectAction } from "@/utils/actions";
 
 export default function CreateProjectPage() {
   return (
-    <section className="bg-slate-50 dark:bg-slate-800">
+    <section>
       <div className="container pb-5">
         <h1 className="text-2xl font-semibold py-5 capitalize">
           Add new project
         </h1>
-        <div className="border p-8 rounded-md">
+        <div className="bg-slate-50 dark:bg-slate-800 border p-8 rounded-md">
           <FormContainer action={createProjectAction}>
             <div className="grid md:grid-cols-3 gap-4 mb-4">
               <FormInput
@@ -24,14 +24,12 @@ export default function CreateProjectPage() {
                 name="name"
                 label="Project name"
                 placeholder="Enter project name"
-                defaultValue="test project"
               />
               <FormInput
                 type="text"
                 name="link"
                 label="Project link"
                 placeholder="https://example.com"
-                defaultValue="https://milanzivanov.com"
               />
 
               <CategoriesInput />

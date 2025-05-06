@@ -10,7 +10,7 @@ export default function ProjectCard({
   const { id: projectId, name, image } = project;
 
   return (
-    <article className="group relative bg-slate-200 dark:bg-slate-700 rounded-md shadow-sm p-2">
+    <article className="group relative bg-slate-100 dark:bg-slate-700 rounded-md shadow-sm p-2">
       <Link href={`/portfolio/${projectId}`}>
         <div className="relative h-[300px] mb-2 overflow-hidden rounded-md">
           <Image
@@ -26,7 +26,7 @@ export default function ProjectCard({
           />
         </div>
         <div className="flex justify-between items-center">
-          <h3 className="text-sm md:text-lg font-semibold">
+          <h3 className="text-sm md:text-md font-semibold">
             {name.substring(0, 30)}
           </h3>
         </div>

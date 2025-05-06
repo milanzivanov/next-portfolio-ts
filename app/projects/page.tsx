@@ -31,13 +31,13 @@ export default async function ProjectsDashboard() {
   }
 
   return (
-    <section className="h-[calc(100dvh-68px)] md:h-[calc(100dvh-101px)] bg-slate-100 dark:bg-slate-800 py-5">
+    <section className="h-[calc(100dvh-68px)] md:h-[calc(100dvh-101px)] py-5">
       <div className="container">
         <div className="mt-3">
           <h4 className="mb-4 font-semibold text-2xl">
             Total projects: {projects.length}
           </h4>
-          <Table className="w-full text-sm md:text-base">
+          <Table className="w-full rounded-md bg-slate-50 dark:bg-slate-800 text-sm md:text-base">
             <TableCaption>A list of projects</TableCaption>
             <TableHeader>
               <TableRow>
@@ -61,7 +61,7 @@ export default async function ProjectsDashboard() {
                           width={100}
                           height={100}
                           alt={name}
-                          className="object-cover rounded-md"
+                          className="hidden md:block h-auto w-auto object-cover rounded-md"
                         />
                         <Link
                           href={`/portfolio/${id}`}

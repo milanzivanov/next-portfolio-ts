@@ -28,13 +28,13 @@ export default async function EditProjectPage({
   const defaultTechnologies: Technology[] = JSON.parse(project.technologies);
 
   return (
-    <section className="bg-slate-50 dark:bg-slate-800">
+    <section className="">
       <div className="container py-5">
-        <h1 className="text-2xl font-semibold mb-8 capitalize">
+        <h1 className="text-2xl font-semibold mb-4 capitalize">
           Edit Property
         </h1>
 
-        <div className="border p-8 rounded-md">
+        <div className="bg-slate-50 dark:bg-slate-800 border p-8 rounded-md">
           <ImageInputContainer
             image={project.image || ""}
             name={project.name}

@@ -8,9 +8,8 @@ function ImageContainer({
   name: string;
 }) {
   return (
-    <section className="h-[300px] md:h-[500px] shadow-sm relative mt-2">
+    <section className="h-[300px] md:h-[500px] shadow-sm relative">
       <Image
-        // src={mainImage}
         src={
           mainImage
             ? `https://zikdvdnrvqdvrrhvwjau.supabase.co/storage/v1/object/public/portfolio-bucket/${mainImage}`
@@ -20,7 +19,7 @@ function ImageContainer({
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         quality={80}
         alt={name}
-        className="object-cover rounded-md"
+        className="object-cover"
         priority
       />
     </section>

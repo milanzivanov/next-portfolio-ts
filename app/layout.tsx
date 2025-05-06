@@ -35,7 +35,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body
-          className={`${inter.className} antialiased overflow-y-scroll scroll-smooth`}
+          className={`${inter.className} antialiased overflow-y-scroll scroll-smooth bg-blue-100 dark:bg-slate-800`}
         >
           <ThemeProvider
             attribute="class"
