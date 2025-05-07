@@ -19,7 +19,7 @@ const Description = ({ description }: { description: string }) => {
   return (
     <article className="mt-2">
       <Title text="Project info" />
-      <p className="text-muted-foreground font-light leading-loose">
+      <p className="text-slate-800 dark:text-gray-200 font-light leading-loose">
         {displayedDescription}
       </p>
       {isLongDescription && (

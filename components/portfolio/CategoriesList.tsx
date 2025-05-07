@@ -14,7 +14,7 @@ export default function CategoriesList({
   return (
     <section>
       <ScrollArea className="py-2">
-        <div className="flex">
+        <div className="flex pt-4">
           {categories.map((item) => {
             const isActive = item.label === category;
             return (
