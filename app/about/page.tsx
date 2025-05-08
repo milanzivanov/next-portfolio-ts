@@ -11,10 +11,10 @@ export default async function AboutPage() {
   return (
     <section className="w-full">
       <div className="container h-auto md:h-[calc(100dvh-100px)] flex items-center justify-center">
-        <div className="max-w-5xl 2xl:max-w-7xl mx-auto">
-          <div className="w-full bg-transparent md:bg-white py-5 md:p-5 flex md:flex-row flex-col xl:rounded-md md:shadow-md">
-            <div className="flex-1 flex flex-col justify-center space-y-1 md:space-y-4 pr-3 pb-5">
-              <h1 className="text-xl tracking-wider md:text-3xl text-grey-200 dark:text-slate-800 font-bold">
+        <div className="max-w-4xl 2xl:max-w-5xl mx-auto">
+          <div className="w-full flex flex-col md:flex-row bg-transparent md:bg-white py-5 md:p-5 xl:rounded-md md:shadow-md">
+            <div className="flex flex-col justify-center flex-2 space-y-1 md:space-y-4 pr-3 pb-5">
+              <h1 className="text-2xl tracking-wider text-grey-200 dark:text-slate-800 font-bold">
                 Bit about myself
               </h1>
               <p className="text-grey-200 dark:text-slate-800 text-sm 2xl:text-lg">
@@ -62,14 +62,15 @@ export default async function AboutPage() {
                 for my next adventure 🚀
               </p>
             </div>
-            <div className="flex-1">
+            <div className="relative flex-1">
               <Image
-                className="flex-1 object-cover bg-gray-300 rounded-md shadow-md"
+                className="object-cover object-center bg-gray-300 rounded-md shadow-md"
                 src={image1}
                 alt="Family sitting around a fire pit in front of cabin"
                 placeholder="blur"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
                 quality={80}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
           </div>

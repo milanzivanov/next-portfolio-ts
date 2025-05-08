@@ -16,7 +16,7 @@ export default function SkillsPage() {
         <div className="w-full">
           <div className="max-w-5xl 2xl:max-w-7xl mx-auto">
             <div className="flex flex-col bg-white pt-5 pb-10 px-5 md:mt-5 shadow-md xl:rounded-md">
-              <h1 className="text-2xl tracking-wider md:text-3xl mb-1 text-gray-600 font-bold">
+              <h1 className="text-2xl tracking-wider mb-1 text-gray-600 font-bold">
                 Technologies
               </h1>
 
@@ -33,7 +33,8 @@ export default function SkillsPage() {
                 </span>
                 , which are at the core of most of my projects. These tools help
                 me build dynamic and efficient web applications, making them an
-                essential part of my development process.
+                essential part of my development process. How time pass im
+                learning new things and adding them to my stack.
               </p>
 
               <SkillsCard skills={skills} />

@@ -34,8 +34,8 @@ export default function Navigation() {
           <Button
             variant="ghost"
             className={cn(
-              "capitalize text-md px-4 py-2 hover:bg-transparent hover:dark:bg-transparent hover:text-primary hover:dark:text-[#0071bc] cursor-pointer",
-              isActive(link.href) ? "text-primary dark:text-[#0071bc]" : ""
+              "capitalize text-md px-4 py-2 hover:bg-transparent hover:dark:bg-transparent hover:text-primary hover:dark:text-amber-200 cursor-pointer",
+              isActive(link.href) ? "text-primary dark:text-amber-200" : ""
             )}
           >
             {link.label}
@@ -50,8 +50,8 @@ export default function Navigation() {
             <Button
               variant="ghost"
               className={cn(
-                "capitalize text-md px-4 py-2 hover:bg-transparent hover:dark:bg-transparent hover:text-primary hover:dark:text-[#0071bc] cursor-pointer",
-                isActive(link.href) ? "text-primary dark:text-[#0071bc]" : ""
+                "capitalize text-md px-4 py-2 hover:bg-transparent hover:dark:bg-transparent hover:text-primary hover:dark:text-amber-200 cursor-pointer",
+                isActive(link.href) ? "text-primary dark:text-amber-200" : ""
               )}
             >
               {link.label}
@@ -67,7 +67,7 @@ export default function Navigation() {
         <SignInButton mode="modal">
           <Button
             variant="ghost"
-            className="text-md px-4 py-2 hover:bg-transparent hover:dark:bg-transparent hover:text-primary hover:dark:text-[#0071bc] cursor-pointer"
+            className="text-md px-4 py-2 hover:bg-transparent hover:dark:bg-transparent hover:text-primary hover:dark:text-amber-200 cursor-pointer"
           >
             <span>Login</span>
           </Button>

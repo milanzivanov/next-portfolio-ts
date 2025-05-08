@@ -12,8 +12,9 @@ export default function Home() {
               src={rocket}
               quality={80}
               alt="rocket in the space illustration"
-              className="object-cover object-center rounded-xl"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover object-center"
+              width={300}
+              height={300}
             />
           </div>
 

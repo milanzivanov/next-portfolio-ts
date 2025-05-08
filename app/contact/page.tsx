@@ -14,20 +14,22 @@ export default function ContactPage() {
   return (
     <div className="w-full">
       <div className="container h-[calc(100dvh-68px)] md:h-[calc(100dvh-100px)] flex md:flex flex-col items-center justify-center">
-        <div className="max-w-5xl  2xl:max-w-7xl mx-auto">
-          <div className="bg-white md:p-5 2xl:rounded-md shadow-md flex flex-col md:flex-row">
-            <div className="flex-1">
+        <div className="max-w-4xl 2xl:max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row bg-white md:p-5 md:rounded-md shadow-md">
+            <div className="relative flex-1">
               <Image
                 className="object-cover flex-1 bg-gray-300 md:rounded-md"
                 src={image1}
                 alt="milan picture"
                 placeholder="blur"
                 quality={80}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
 
-            <div className="flex-1 p-5">
-              <h1 className="text-2xl tracking-wider md:text-3xl mb-2 text-gray-600 font-bold">
+            <div className="flex-2 p-5">
+              <h1 className="text-2xl tracking-wider mb-2 text-gray-600 font-bold">
                 Get in touch with me
               </h1>
 
