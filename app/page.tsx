@@ -3,7 +3,7 @@ import rocket from "@/public/rocket333.png";
 
 export default function Home() {
   return (
-    <div className="w-full h-[calc(100dvh-68px)] md:h-[calc(100dvh-101px)] rounded-2xl flex flex-col items-center justify-center">
+    <div className="w-full h-[calc(100dvh-68px)] md:h-[calc(100dvh-100px)] rounded-2xl flex flex-col items-center justify-center">
       <div className="w-full">
         <div className="relative z-10 flex items-center justify-center rounded-2xl gap-0 md:gap-5 max-w-7xl p-0 py-5 md:p-5 mx-auto">
           {/* left */}
@@ -11,15 +11,16 @@ export default function Home() {
             <Image
               src={rocket}
               quality={80}
-              className="object-cover object-center"
-              alt="mobile phone pancile keybord on the table"
+              alt="rocket in the space illustration"
+              className="object-cover object-center rounded-xl"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
 
           {/* right */}
           <div className="flex items-center justify-center overflow-hidden rounded-2xl">
             <h1
-              className={`px-5 block text-[1.5rem] leading-[2.3rem] md:text-[3.5rem] 2xl:text-[4rem] tracking-wide lg:leading-[4rem] 2xl:leading-[5.3rem]`}
+              className={`px-5 block text-[1.5rem] leading-[2.3rem] md:text-[2.7rem] 2xl:text-[4rem] tracking-wide lg:leading-[4rem] 2xl:leading-[5.3rem]`}
             >
               <span className="block text-slate-800 dark:text-slate-100">
                 I am{" "}

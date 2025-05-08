@@ -12,7 +12,7 @@ export default function SkillsPage() {
 
   return (
     <section className="w-full">
-      <div className="w-full md:h-[calc(100dvh-101px)] flex flex-col items-center justify-center">
+      <div className="w-full md:h-[calc(100dvh-100px)] flex flex-col items-center justify-center">
         <div className="w-full">
           <div className="max-w-5xl 2xl:max-w-7xl mx-auto">
             <div className="flex flex-col bg-white pt-5 pb-10 px-5 md:mt-5 shadow-md xl:rounded-md">

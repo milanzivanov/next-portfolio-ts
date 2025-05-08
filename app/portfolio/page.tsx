@@ -16,7 +16,7 @@ export default async function PorfolioPage(props: {
   const { category, search } = awaitedSearchParams;
 
   return (
-    <section className="h-[calc(100dvh-101px)]py-5">
+    <section className="h-[calc(100dvh-100px)]py-5">
       <div className="container">
         <CategoriesList category={category} search={search} />
         <Suspense fallback={<LoadingCards />}>

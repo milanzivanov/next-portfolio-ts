@@ -10,7 +10,7 @@ export const metadata = {
 export default async function AboutPage() {
   return (
     <section className="w-full">
-      <div className="container h-auto md:h-[calc(100dvh-101px)] flex items-center justify-center">
+      <div className="container h-auto md:h-[calc(100dvh-100px)] flex items-center justify-center">
         <div className="max-w-5xl 2xl:max-w-7xl mx-auto">
           <div className="w-full bg-transparent md:bg-white py-5 md:p-5 flex md:flex-row flex-col xl:rounded-md md:shadow-md">
             <div className="flex-1 flex flex-col justify-center space-y-1 md:space-y-4 pr-3 pb-5">

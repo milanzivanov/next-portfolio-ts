@@ -31,7 +31,7 @@ export default async function ProjectsDashboard() {
   }
 
   return (
-    <section className="h-[calc(100dvh-68px)] md:h-[calc(100dvh-101px)] py-5">
+    <section className="h-[calc(100dvh-68px)] md:h-[calc(100dvh-100px)] py-5">
       <div className="container">
         <div className="mt-3">
           <h4 className="mb-4 font-semibold text-2xl">

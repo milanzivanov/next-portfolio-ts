@@ -29,7 +29,7 @@ export default async function ProjectDetailsPage(props: {
   const { name, image, link } = project;
 
   return (
-    <div className="h-[calc(100dvh-101px)] py-5">
+    <div className="h-[calc(100dvh-100px)] py-5">
       <section className="container">
         <BreadCrumbs name={name} />
         <header className="flex justify-between items-center mt-4">

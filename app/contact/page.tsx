@@ -13,7 +13,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <div className="w-full">
-      <div className="container h-[calc(100dvh-68px)] md:h-[calc(100dvh-101px)] flex md:flex flex-col items-center justify-center">
+      <div className="container h-[calc(100dvh-68px)] md:h-[calc(100dvh-100px)] flex md:flex flex-col items-center justify-center">
         <div className="max-w-5xl  2xl:max-w-7xl mx-auto">
           <div className="bg-white md:p-5 2xl:rounded-md shadow-md flex flex-col md:flex-row">
             <div className="flex-1">
