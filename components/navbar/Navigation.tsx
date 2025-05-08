@@ -14,9 +14,11 @@ import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
 
 export default function Navigation() {
   const pathname = usePathname();
-  const isActive = (href: string) => {
-    return pathname === href;
-  };
+  // const isActive = (href: string) => {
+  //   return pathname === href;
+  // };
+  // shorter
+  const isActive = (href: string) => pathname === href;
 
   const publicLinks = links.filter(
     (link) => link.href !== "/projects" && link.href !== "/projects/create"
@@ -34,8 +36,8 @@ export default function Navigation() {
           <Button
             variant="ghost"
             className={cn(
-              "capitalize text-md px-4 py-2 hover:bg-transparent hover:dark:bg-transparent hover:text-primary hover:dark:text-amber-200 cursor-pointer",
-              isActive(link.href) ? "text-primary dark:text-amber-200" : ""
+              "capitalize text-md px-4 py-2 hover:bg-transparent hover:dark:bg-transparent hover:text-primary hover:dark:text-[#8ec5ff] cursor-pointer",
+              isActive(link.href) ? "text-primary dark:text-[#8ec5ff]" : ""
             )}
           >
             {link.label}
@@ -50,8 +52,8 @@ export default function Navigation() {
             <Button
               variant="ghost"
               className={cn(
-                "capitalize text-md px-4 py-2 hover:bg-transparent hover:dark:bg-transparent hover:text-primary hover:dark:text-amber-200 cursor-pointer",
-                isActive(link.href) ? "text-primary dark:text-amber-200" : ""
+                "capitalize text-md px-4 py-2 hover:bg-transparent hover:dark:bg-transparent hover:text-primary hover:dark:text-[#8ec5ff] cursor-pointer",
+                isActive(link.href) ? "text-primary dark:text-[#8ec5ff]" : ""
               )}
             >
               {link.label}
@@ -67,7 +69,7 @@ export default function Navigation() {
         <SignInButton mode="modal">
           <Button
             variant="ghost"
-            className="text-md px-4 py-2 hover:bg-transparent hover:dark:bg-transparent hover:text-primary hover:dark:text-amber-200 cursor-pointer"
+            className="text-md px-4 py-2 hover:bg-transparent hover:dark:bg-transparent hover:text-primary hover:dark:text-[#8ec5ff] cursor-pointer"
           >
             <span>Login</span>
           </Button>

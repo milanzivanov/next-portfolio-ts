@@ -10,7 +10,7 @@ function SignOutLink() {
   return (
     <SignOutButton redirectUrl="/">
       <button
-        className="w-full text-left cursor-pointer hover:bg-transparent hover:dark:bg-transparent hover:text-primary hover:dark:text-amber-200"
+        className="w-full text-left cursor-pointer hover:bg-transparent hover:dark:bg-transparent hover:text-primary hover:dark:text-[#8ec5ff]"
         onClick={handleLogout}
       >
         Logout
